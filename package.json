@@ -1,22 +1,18 @@
 {
-  "name": "cra-hackday",
+  "name": "pet-shop",
   "version": "1.0.0",
-  "description": "sf-hackday app from team stackOverflow",
-  "main": "index.js",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
+    "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mdyzhama/cra-hackday.git"
-  },
-  "author": "team stackOverflow",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mdyzhama/cra-hackday/issues"
-  },
-  "homepage": "https://github.com/mdyzhama/cra-hackday#readme",
-  "dependencies": {
-    "truffle": "^5.0.15"
+  "devDependencies": {
+    "lite-server": "^2.3.0"
   }
 }

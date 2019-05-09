@@ -57,6 +57,20 @@ App = {
     /*
      * Replace me...
      */
+  },
+  
+  castVote: function() {
+	console.log("executed.")
+    var candidateId = $('#candidatesSelect').val();
+    App.contracts.Election.deployed().then(function(instance) {
+      return instance.vote(candidateId, { from: App.account });
+    }).then(function(result) {
+      // Wait for votes to update
+      $("#content").hide();
+      $("#loader").show();
+    }).catch(function(err) {
+      console.error(err);
+    });
   }
 
 };

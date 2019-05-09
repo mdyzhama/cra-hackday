@@ -1,0 +1,22 @@
+{
+  "name": "cra-hackday",
+  "version": "1.0.0",
+  "description": "sf-hackday app from team stackOverflow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdyzhama/cra-hackday.git"
+  },
+  "author": "team stackOverflow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdyzhama/cra-hackday/issues"
+  },
+  "homepage": "https://github.com/mdyzhama/cra-hackday#readme",
+  "dependencies": {
+    "truffle": "^5.0.15"
+  }
+}

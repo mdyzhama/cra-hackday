@@ -1,28 +1,23 @@
-pragma solidity 0.5.0;
-
-contract Election {
-
-    // Model a Candidate
-    struct Candidate {
-        uint id;
-        string name;
-        uint voteCount;
+pragma solidity >=0.4.22 <0.6.0;
+contract MyContract {
+    mapping(address => uint256) public balances;
+    address payable wallet;
+    
+    event Purchase(
+        address indexed _buyer,
+        uint256 _amount
+    );
+    constructor(address payable _wallet) public {
+        wallet = _wallet;
     }
 
-    // Read/write Candidates
-    mapping(uint => Candidate) public candidates;
-
-    // Store Candidates Count
-    uint public candidatesCount;
-
-    function addCandidate (string memory _name) private {
-        candidatesCount ++;
-        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
+    function() external payable {
+        buyToken();
     }
 
-    // Constructor
-    constructor () public {
-        addCandidate("Candidate 1");
-        addCandidate("Candidate 2");
+    function buyToken() public payable {
+        balances[msg.sender] += 1;
+        wallet.transfer(msg.value);
+        emit Purchase(msg.sender, 1);
     }
 }

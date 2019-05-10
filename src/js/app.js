@@ -6,7 +6,7 @@ App = {
     // Load pets.
     $.getJSON('../users.json', function (data) {
 
-      $('#table').bootstrapTable({
+     /*  $('#table').bootstrapTable({
         data: data
       });
       let selected = data.find(d => d.name === "Jyothi Tirumani")
@@ -15,21 +15,19 @@ App = {
       userName.find('.user-panel').text(selected.name);
       // userName.find('h3').attr('textContent',selected.name);
       userName.value = selected.name
-      userTemplate.find('img').attr('src', selected.picture);
+      userTemplate.find('img').attr('src', selected.picture); */
 
-      var petsRow = $('#petsRow'); var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate'); var petTemplate = $('#petTemplate');
-      for (i = 0; i < data.length; i++) {
-        for (i = 0; i < data.length; i++) {
-          petTemplate.find('.panel-title').text(data[i].name); petTemplate.find('.panel-title').text(data[i].name);
-          petTemplate.find('img').attr('src', data[i].picture); petTemplate.find('img').attr('src', data[i].picture);
-          petTemplate.find('.pet-breed').text(data[i].breed);
-          petTemplate.find('.pet-age').text(data[i].age);
-          petTemplate.find('.pet-location').text(data[i].location); petTemplate.find('.pet-location').text(data[i].location);
-          petTemplate.find('.btn-adopt').attr('data-id', data[i].id); petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
-          petsRow.append(petTemplate.html()); petsRow.append(petTemplate.html());
-        }
-      }
+    var petsRow = $('#petsRow');
+     var petTemplate = $('#petTemplate');
+
+     for (i = 0; i < data.length; i ++) {
+       petTemplate.find('.panel-title').text(data[i].name);
+       petTemplate.find('img').attr('src', data[i].picture);
+       petTemplate.find('.pet-location').text(data[i].location);
+       petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
+
+       petsRow.append(petTemplate.html());
+     }
     });
 
     return await App.initWeb3();
@@ -125,7 +123,7 @@ App = {
           if (!err)
             console.log(transactionHash + " success"); 
         });
-        return 12;
+        return adoptionInstance.adopt(petId, {from: account});;
       }).then(function(result) {
         return App.markAdopted();
       }).catch(function(err) {

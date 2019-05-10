@@ -9,28 +9,21 @@
     {
         "id": 2,
         "name": "Pierre-Yves Poli",
-        "picture": "images/img-3.png",
+        "picture": "images/img-9.png",
         "location": "Lisco, Alabama",
         "Items" : []
     },
     {
         "id": 3,
         "name": "Shuoyi Wei",
-        "picture": "images/img-3.png",
+        "picture": "images/img-4.png",
         "location": "Lisco, Alabama",
         "Items" : []
     },
     {
         "id": 4,
         "name": "Yi-Chi Chan",
-        "picture": "images/img-4.png",
-        "location": "Lisco, Alabama",
-        "Items" : []
-    },
-    {
-        "id": 5,
-        "name": "Umesh Kant",
-        "picture": "images/img-4.png",
+        "picture": "images/img-8.png",
         "location": "Lisco, Alabama",
         "Items" : []
     },
@@ -44,14 +37,21 @@
     {
         "id": 7,
         "name": "Sapan Bhatt",
-        "picture": "images/img-4.png",
+        "picture": "images/img-7.png",
         "location": "Lisco, Alabama",
         "Items" : []
     },
     {
         "id": 8,
         "name": "Vani Selvan",
-        "picture": "images/img-5.png",
+        "picture": "images/img-11.jpg",
+        "location": "Lisco, Alabama",
+        "Items" : []
+    },
+    {
+        "id": 5,
+        "name": "Umesh Kant",
+        "picture": "images/img-8.png",
         "location": "Lisco, Alabama",
         "Items" : []
     }

@@ -5,6 +5,8 @@ contract Adoption {
 	address[16] public adopters;
 	address payable wallet;
 	address owner;
+	
+	mapping(int => string) Stock;
 
 	// Adopting a pet
 	function adopt(uint petId) public returns (uint) {
@@ -17,16 +19,5 @@ contract Adoption {
 	function getAdopters() public view returns (address[16] memory) {
 	  return adopters;
 	}
-
-	function transferEther() public payable {
-		wallet.transfer(msg.value);
-	}
-
-	constructor(address payable _wallet) public {
-		owner = msg.sender;
-		wallet = _wallet;
-	}
-
-	
 
 }

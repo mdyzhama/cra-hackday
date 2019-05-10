@@ -4,19 +4,31 @@ App = {
 
   init: async function() {
     // Load pets.
-    $.getJSON('../pets.json', function(data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
+    $.getJSON('../users.json', function (data) {
 
-      for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
-        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
+      $('#table').bootstrapTable({
+        data: data
+      });
+      let selected = data.find(d => d.name === "Jyothi Tirumani")
+      let userTemplate = $('#user-image');
+      let userName = $('#user-panel');
+      userName.find('.user-panel').text(selected.name);
+      // userName.find('h3').attr('textContent',selected.name);
+      userName.value = selected.name
+      userTemplate.find('img').attr('src', selected.picture);
 
-        petsRow.append(petTemplate.html());
+      var petsRow = $('#petsRow'); var petsRow = $('#petsRow');
+      var petTemplate = $('#petTemplate'); var petTemplate = $('#petTemplate');
+      for (i = 0; i < data.length; i++) {
+        for (i = 0; i < data.length; i++) {
+          petTemplate.find('.panel-title').text(data[i].name); petTemplate.find('.panel-title').text(data[i].name);
+          petTemplate.find('img').attr('src', data[i].picture); petTemplate.find('img').attr('src', data[i].picture);
+          petTemplate.find('.pet-breed').text(data[i].breed);
+          petTemplate.find('.pet-age').text(data[i].age);
+          petTemplate.find('.pet-location').text(data[i].location); petTemplate.find('.pet-location').text(data[i].location);
+          petTemplate.find('.btn-adopt').attr('data-id', data[i].id); petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
+          petsRow.append(petTemplate.html()); petsRow.append(petTemplate.html());
+        }
       }
     });
 

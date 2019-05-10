@@ -22,7 +22,7 @@ contract Adoption {
 		wallet.transfer(msg.value);
 	}
 
-	constructor (address payable _wallet) public {
+	constructor(address payable _wallet) public {
 		owner = msg.sender;
 		wallet = _wallet;
 	}

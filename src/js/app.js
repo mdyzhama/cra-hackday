@@ -103,15 +103,17 @@ App = {
       }
 
       var account = accounts[0];
-
+	  console.log(accounts);
       App.contracts.Adoption.deployed().then(function(instance) {
         adoptionInstance = instance;
 
         // Execute adopt as a transaction by sending account
-        var valueInWei = web3.utils.fromEther(0.5)
-        var adopted = adoptionInstance.adopt(petId, {from: account, value: valueInWei});
-        adoptionInstance.transferEther();
-        return adopted;
+        //var adopted = adoptionInstance.adopt(petId, {from: account});
+        web3.eth.sendTransaction({from:account ,to:"0xFcF49C029854e0D8d8F74dFda90144AAb2A8efd6", value:web3.toWei(10, "ether")}, function(err, transactionHash) {
+          if (!err)
+            console.log(transactionHash + " success"); 
+        });
+        return 12;
       }).then(function(result) {
         return App.markAdopted();
       }).catch(function(err) {

@@ -119,7 +119,7 @@ App = {
 
         // Execute adopt as a transaction by sending account
         //var adopted = adoptionInstance.adopt(petId, {from: account});
-        web3.eth.sendTransaction({from:account ,to:"0xFcF49C029854e0D8d8F74dFda90144AAb2A8efd6", value:web3.toWei(10, "ether")}, function(err, transactionHash) {
+        web3.eth.sendTransaction({from:account ,to:"0x00662534136d2Af71e1BfEe9fb47080C1d509AB6", value:web3.toWei(10, "ether")}, function(err, transactionHash) {
           if (!err)
             console.log(transactionHash + " success"); 
         });
